@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: config.server
+  datasource:
+    url: ${CONFIG_SERVER_DB_URL}
+    username: ${PET_DB_PSWD}
+    password: ${PET_DB_USER}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    locations: classpath:db/migration
+    schemas: config_schema
+    baseline-on-migrate: true
+  profiles:
+    include: jdbc
+  cloud:
+    config:
+      server:
+        jdbc:
+          order: 1
+          sql: SELECT PROP_KEY, VALUE from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+
+app:
+  service-name: dev
+  environment: dev
+
+server:
+  port: 8888
+
+logging:
+  level:
+    org.flywaydb: DEBUG

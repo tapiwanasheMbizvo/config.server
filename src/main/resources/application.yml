@@ -9,8 +9,8 @@ spring:
   flyway:
     enabled: true
     url: ${spring.datasource.url}
-    user: ${spring.datasource.username}
-    password: ${spring.datasource.password}
+    user:  ${PET_DB_PSWD}
+    password: ${PET_DB_USER}
     locations: classpath:db/migration
     schemas: config_schema
     baseline-on-migrate: true

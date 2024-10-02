@@ -2,15 +2,15 @@ spring:
   application:
     name: config.server
   datasource:
-    url: ${CONFIG_SERVER_DB_URL}
-    username: ${PET_DB_PSWD}
-    password: ${PET_DB_USER}
+    url: ${DB_URL}/cloud_config_sever?currentSchema=config_schema
+    username: ${DB_USER}
+    password: ${DB_PASS}
     driver-class-name: org.postgresql.Driver
   flyway:
     enabled: true
     url: ${spring.datasource.url}
-    user:  ${PET_DB_PSWD}
-    password: ${PET_DB_USER}
+    user:  ${DB_USER}
+    password: ${DB_PASS}
     locations: classpath:db/migration
     schemas: config_schema
     baseline-on-migrate: true

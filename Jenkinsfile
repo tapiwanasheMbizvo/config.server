@@ -23,7 +23,7 @@ tools{
         stage('Checkout Code') {
             steps {
                 echo "Checking out code "
-                git url: "${GITHUB_REPOSITORY}", branch: 'simple-spring-boot-with-docker'
+                git url: "${GITHUB_REPOSITORY}", branch: 'main'
             }
         }
         stage('Run Test') {

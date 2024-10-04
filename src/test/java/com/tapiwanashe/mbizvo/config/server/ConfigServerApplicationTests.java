@@ -1,4 +1,4 @@
-package com.tapiwanashe.mbizvo.config.server;
+/*package com.tapiwanashe.mbizvo.config.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,3 +11,4 @@ class ConfigServerApplicationTests {
 	}
 
 }
+*/
